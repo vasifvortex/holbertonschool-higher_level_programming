@@ -11,8 +11,7 @@ def text_indentation(text):
         #(delimeter + "\n\n").join([index.strip(" ") for index in words.split(delimeter)])
     for delimeter in " ":
         temp = " "
-        words = words.split(" ")
-        temp = temp.join(words)
+        temp = temp.join(words.split(" "))
         print(temp)
 if __name__ == "__main__":
     import doctest
