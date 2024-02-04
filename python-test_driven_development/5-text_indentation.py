@@ -10,7 +10,7 @@ def text_indentation(text):
         words = (delimeter + "\n\n").join(
                 [index.strip(" ") for index in words.split(delimeter)])
     if delimeter is None:
-        words = text.strip(" ")
+        text.strip(" ")
 
 if __name__ == "__main__":
     import doctest
