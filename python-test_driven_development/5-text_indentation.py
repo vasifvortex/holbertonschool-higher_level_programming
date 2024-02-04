@@ -16,4 +16,7 @@ def text_indentation(text):
 
 if __name__ == "__main__":
     import doctest
+    result = text_indentation("Holberton School")
+    print("Actual stdout:", result)
+    print("Actual stdout length:", len(result))
     doctest.testfile("tests/5-text_indentation.txt")
