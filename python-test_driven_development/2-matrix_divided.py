@@ -6,7 +6,7 @@ def matrix_divided(matrix, div):
     """matrix divided"""
     errorMessage = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
-        raise TypeError(errorMessage)
+        raise TypeError(errorMessage + " more characters")
     if not isinstance(matrix, list):
         raise TypeError(errorMessage)
     for lists in matrix:
