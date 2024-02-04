@@ -12,6 +12,7 @@ def text_indentation(text):
     for delimeter in " ":
         temp = " "
         temp = temp.join(text.split(" "))
+        print(len(temp))
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/5-text_indentation.txt")
