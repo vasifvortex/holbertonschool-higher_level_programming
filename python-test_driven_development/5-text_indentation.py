@@ -9,7 +9,7 @@ def text_indentation(text):
     for delimeter in "?:.":
         words = (delimeter + "\n\n").join(
                 [index.strip(" ") for index in words.split(delimeter)])
-    for delimeter is " ":
+    if delimeter is " ":
         words = (delimeter + "\n\n").join(
                 [index.strip(" ") for index in words.split(delimeter)])
 
