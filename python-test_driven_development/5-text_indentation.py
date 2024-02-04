@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""text indent"""
+
+
 def text_indentation(text):
     """text indent"""
     if not isinstance(text, str):
