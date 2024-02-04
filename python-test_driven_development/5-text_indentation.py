@@ -6,7 +6,14 @@ def text_indentation(text):
     """text indent"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for delimeter in "?:.":
-         text =(delimeter + "\n\n").join([index.strip(" ") for index in text.split(delimeter)])
-         print(text)
-         return(text)
+
+    result = text
+    for delimiter in "?:.":
+        result = (delimiter + "\n\n").join(
+            [index.strip() for index in result.split(delimiter)])
+
+    print(result)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
