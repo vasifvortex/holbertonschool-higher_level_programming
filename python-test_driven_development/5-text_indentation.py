@@ -10,9 +10,9 @@ def text_indentation(text):
      #   words = delimeter.join(index.strip(" ") for index in words.split(delimeter))
         #(delimeter + "\n\n").join([index.strip(" ") for index in words.split(delimeter)])
     for delimeter in " ":
-        temp = " "
+        temp = ""
         temp = temp.join(text.split(" "))
-        print(len(temp))
+        print(temp)
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/5-text_indentation.txt")
