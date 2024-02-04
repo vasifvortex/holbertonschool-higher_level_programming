@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """add integer"""
+
+
 def add_integer(a, b=98):
     """add integer"""
     if not isinstance(a, int) and not isinstance(a, float):
