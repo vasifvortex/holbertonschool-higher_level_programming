@@ -7,8 +7,8 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for delimeter in "?:.":
-        words = (delimeter + "\n\n").join(
-                [index.strip(" ") for index in words.split(delimeter)])
+        word = (delimeter + "\n\n").join(
+                [index.strip(" ") for index in word.split(delimeter)])
 
 if __name__ == "__main__":
     import doctest
