@@ -12,7 +12,10 @@ def text_indentation(text):
         result = (delimiter + "\n\n").join(
             [index.strip() for index in result.split(delimiter)])
 
-    print(result)
+    print("Desired stdout length:", len("Holberton School"))
+    print("Actual stdout:", result)
+    print("Actual stdout length:", len(result))
+    
     return result
 
 if __name__ == "__main__":
