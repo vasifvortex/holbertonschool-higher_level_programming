@@ -13,6 +13,7 @@ def text_indentation(text):
             [index.strip() for index in result.split(delimiter)])
 
     print(result)
+    return result
 
 if __name__ == "__main__":
     import doctest
