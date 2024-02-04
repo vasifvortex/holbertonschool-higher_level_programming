@@ -3,14 +3,14 @@
 
 
 def text_indentation(text):
-    """text indent"""
+    """Indent text based on delimiters"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
     result = text
     for delimiter in "?:.":
-        result = (delimiter + "\n\n").join(
-            [index.strip() for index in result.split(delimiter)])
+        lines = result.split(delimiter)
+        result = (delimiter + "\n\n").join([line.strip() for line in lines])
 
     print("Actual stdout:", result)
     return result
