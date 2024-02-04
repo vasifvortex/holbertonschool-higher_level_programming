@@ -84,8 +84,8 @@ Hello
 Import module:
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 Test no delimeters:
->>> text_indentation("Hello Holberton")
-Hello Holberton
+>>> text_indentation("Holberton School")
+Holberton School
 Test string with spaces:
 >>> text_indentation("Holberton    ")
 Holberton
