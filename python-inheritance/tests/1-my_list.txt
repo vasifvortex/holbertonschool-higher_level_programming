@@ -1,0 +1,62 @@
+More comprehensive tests for the MyList class, including edge cases and common use scenarios.
+
+Test appending elements and printing the original list:
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> my_list.append(5)
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> print(my_list)
+[5, 1, 4]
+
+Test the print_sorted method to ensure it prints the list sorted without altering the original list:
+>>> my_list.print_sorted()
+[1, 4, 5]
+>>> print(my_list)
+[5, 1, 4]
+
+Test appending more elements and printing them sorted:
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[5, 1, 4, 3, 2]
+
+Test with negative numbers and zero:
+>>> my_list.append(-1)
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[-1, 0, 1, 2, 3, 4, 5]
+>>> print(my_list)
+[5, 1, 4, 3, 2, -1, 0]
+
+Test with duplicate numbers:
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[-1, 0, 1, 2, 2, 3, 3, 4, 5]
+>>> print(my_list)
+[5, 1, 4, 3, 2, -1, 0, 3, 2]
+
+Testing clear method to empty the list, and then print it:
+>>> my_list.clear()
+>>> print(my_list)
+[]
+
+Test appending after clearing the list:
+>>> my_list.append(10)
+>>> my_list.append(20)
+>>> print(my_list)
+[10, 20]
+>>> my_list.print_sorted()
+[10, 20]
+
+Ensure print_sorted works with a list of one element:
+>>> my_list = MyList([100])
+>>> my_list.print_sorted()
+[100]
