@@ -1,22 +1,40 @@
 #!/usr/bin/python3
-"""List all states"""
-from sys import argv
+"""
+Start link class to table in database
+"""
+
+
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sys import argv
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == "__main__":
-    engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2],
-                argv[3]), pool_pre_ping=True)
+
+def main():
+    if len(argv) != 5:
+        return
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
+    state = argv[4]
+
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+                           .format(username, password, database),
+                           pool_pre_ping=True)
     Base.metadata.create_all(engine)
+
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).\
-        filter(State.name == argv[4]).order_by(State.id).all()
-    if states:
-        print("{}".format(states[0].id))
+
+    state_obj = session.query(State).filter(State.name == state).first()
+
+    if state_obj:
+        print("{}".format(state_obj.id))
     else:
         print("Not found")
+
     session.close()
+
+
+if __name__ == "__main__":
+    main()
