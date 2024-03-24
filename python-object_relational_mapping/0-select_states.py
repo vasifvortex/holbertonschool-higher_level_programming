@@ -1,23 +1,16 @@
 #!/usr/bin/python3
-"""Documentation"""
-
+"""Lists states"""
 
 import MySQLdb
-import sys
-
+from sys import argv
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    db = MySQLdb.connect(host="localhost",
-                         port=3306, user=username,
-                         passwd=password, db=database)
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-    rows = cursor.fetchall()
-    for row in rows:
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-    cursor.close()
-    db.close()
+    cur.close()
+    conn.close()
